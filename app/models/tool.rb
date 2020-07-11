@@ -1,7 +1,7 @@
 class Tool < ApplicationRecord
   belongs_to :user
 
-  has_many :reservartions, dependent: :destroy
+  has_many :reservations, dependent: :destroy
 
   validates :name, presence: true
   validates :category, presence: true
