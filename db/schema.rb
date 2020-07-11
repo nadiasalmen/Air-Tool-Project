@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_11_182021) do
+ActiveRecord::Schema.define(version: 2020_07_11_185406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "reservations", force: :cascade do |t|
+    t.string "status"
+    t.date "start_date"
+    t.date "end_start"
+    t.bigint "user_id", null: false
+    t.bigint "tool_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.float "price"
+    t.index ["tool_id"], name: "index_reservations_on_tool_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "tools", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.boolean "status"
+    t.float "price"
+    t.float "rating"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_tools_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +48,13 @@ ActiveRecord::Schema.define(version: 2020_07_11_182021) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "location"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "reservations", "tools"
+  add_foreign_key "reservations", "users"
+  add_foreign_key "tools", "users"
 end
