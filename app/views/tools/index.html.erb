@@ -1,16 +1,17 @@
-<h1>Tools list</h1>
 <div class="container">
-  <% @tools.each do |tool| %>
-    <div class="cards">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title"><%= @tool.name %></h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+<h1>Tools list</h1>
+  <div class="row">
+    <% @tools.each do |tool| %>
+      <div class="col-sm-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title font-weight-bold"><%= tool.name %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= tool.category %></h6>
+            <p class="card-text">Price: $<%= tool.price %></p>
+            <%= link_to "Reserve", tool_path(tool), class: "card-link"%>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

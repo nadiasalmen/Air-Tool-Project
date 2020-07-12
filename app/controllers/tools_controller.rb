@@ -1,6 +1,6 @@
 class ToolsController < ApplicationController
 
-before_action :find_cocktail, only: [:show]
+before_action :find_tool, only: [:show]
 
 def index
   @tools = Tool.all
@@ -10,8 +10,8 @@ def show; end
 
 private
 
-	def find_cocktail
-	  @cocktail = Cocktail.find(params[:id])
+	def find_tool
+	  @tool = Tool.find(params[:id])
 	end
 
 end
