@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :reservations, only: [:new, :create]
   end
   resources :reservations, only: [:index, :show, :edit, :update]
+  get "my_tools", to: "tools#my_tools"
 end

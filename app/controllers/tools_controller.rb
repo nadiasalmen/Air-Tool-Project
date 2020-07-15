@@ -3,6 +3,10 @@ class ToolsController
     @tools = Tool.all
   end
 
+  def my_tools
+    @tools = Tool.where(user: current_user)
+  end
+
   def show
     @tool = Tool.find(params[:id])
   end
