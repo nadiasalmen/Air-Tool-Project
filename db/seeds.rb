@@ -14,7 +14,7 @@ User.destroy_all
 
 puts "creating new users"
 
-10.times do
+3.times do
   user = User.new(
     email: Faker::Internet.email,
     password: Faker::Internet.password(min_length: 8),
@@ -49,6 +49,7 @@ t2 = Time.parse("2015-11-20 16:20:23")
     end_start: rand(t1..t2)
   )
   reservation.user = User.all.sample
+  # validar que no sea user = owner
   reservation.tool = Tool.all.sample
   reservation.save!
 end
