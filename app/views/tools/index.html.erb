@@ -1,0 +1,11 @@
+<ul>
+  <% @tools.each do |tool|%>
+    <li>
+      <p><%= tool.name %></p>
+      <p><%= tool.category %></p>
+      <p><%= tool.status %></p>
+      <p><%= tool.price %></p>
+      <p><%= tool.rating %></p>
+    </li>
+  <% end %>
+</ul>
