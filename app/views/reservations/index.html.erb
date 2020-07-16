@@ -1,0 +1,11 @@
+<ul>
+  <% @reservations.each do |reservation|%>
+    <li>
+      <p><%= reservation.tool.name %></p>
+      <p><%= reservation.user.name %></p>
+      <p><%= reservation.status %></p>
+      <p><%= reservation.start_date %></p>
+      <p><%= reservation.end_start %></p>
+    </li>
+  <% end %>
+</ul>
