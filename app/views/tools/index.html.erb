@@ -1,11 +1,17 @@
-<ul>
-  <% @tools.each do |tool|%>
-    <li>
-      <p><%= tool.name %></p>
-      <p><%= tool.category %></p>
-      <p><%= tool.status %></p>
-      <p><%= tool.price %></p>
-      <p><%= tool.rating %></p>
-    </li>
-  <% end %>
-</ul>
+<div class="container">
+<h1>Tools list</h1>
+  <div class="row">
+    <% @tools.each do |tool| %>
+      <div class="col-sm-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title font-weight-bold"><%= tool.name %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= tool.category %></h6>
+            <p class="card-text">Price: $<%= tool.price %></p>
+            <%= link_to "Reserve", tool_path(tool), class: "card-link"%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
