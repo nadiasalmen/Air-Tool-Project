@@ -1,1 +1,13 @@
-<h1>Show page</h1>
+<div class="container">
+  <h1><%= @tool.name %></h1>
+  <h4>Category: <%= @tool.category %></h4>
+  <h4>Price: $<%= @tool.price %></h4>
+  <h4>Rating:
+    <% counter = 0 %>
+    <% 5.times do %>
+      <i class="fa <%= @tool.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+      <% counter += 1 %>
+    <% end %>
+  </h4>
+  <%= link_to "Reserve", new_tool_reservation_path, class: "btn btn-gradient"  %>
+</div>
