@@ -1,9 +1,16 @@
-<%= form_for(@reservations) do |f| %>
-  <%= f.label :status %>
-  <%= f.text_field :status %>
-  <%= f.label :start_date %>
-  <%= f.text_field :start_date %>
-  <%= f.label :end_start %>
-  <%= f.number_field :end_start %>
-  <%= f.submit %>
+<div class="container">
+  <div class="row justify-content-around">
+    <div class="card-body">
+      <h5 class="card-title font-weight-bold"><%= @tool.name %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= @tool.category %></h6>
+      <p class="card-text">Price: $<%= @tool.price %></p>
+      <%= simple_form_for(@reservation) do |f| %>
+      <%= f.label "Start" %>
+      <%= f.datetime_field :start_date %>
+      <%= f.label "End" %>
+      <%= f.datetime_field :end_start %>
+      <%= f.submit %>
+    </div>
+  </div>
+</div>
 <% end %>
