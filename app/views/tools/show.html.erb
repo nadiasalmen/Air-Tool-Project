@@ -9,5 +9,7 @@
       <% counter += 1 %>
     <% end %>
   </h4>
-  <%= link_to "Reserve", new_tool_reservation_path(@tool)  %>
+  <%= link_to "Edit", edit_tool_path %>
+  <%= link_to "Delete this tool", tool_path, method: :delete %>
+  <%= link_to "Reserve this tool", new_tool_reservation_path(@tool) %>
 </div>
