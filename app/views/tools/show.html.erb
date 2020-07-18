@@ -3,13 +3,21 @@
   <h4>Category: <%= @tool.category %></h4>
   <h4>Price: $<%= @tool.price %></h4>
   <h4>Rating:
-    <% counter = 0 %>
-    <% 5.times do %>
-      <i class="fa <%= @tool.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
-      <% counter += 1 %>
+    <% if @tool.rating == 0 %>
+      <p>No rating for this tool</p>
+    <% else %>
+      <% counter = 0 %>
+      <% 5.times do %>
+        <i class="fa <%= @tool.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+        <% counter += 1 %>
+      <% end %>
     <% end %>
-  <h4>Description: @tool.description </h4>
   </h4>
+  <% if @tool.description.nil? == true %>
+    <p>No description found</p>
+  <% else %>
+    <h4>Description: <%= @tool.description %></h4>
+  <% end %>
   <%= link_to "Edit", edit_tool_path %>
   <%= link_to "Delete this tool", tool_path, method: :delete %>
   <%= link_to "Reserve this tool", new_tool_reservation_path(@tool) %>
