@@ -17,7 +17,8 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.tool = @tool
     @reservation.user = current_user
-    if @reservation.save
+    @reservation.status = "New"
+    if @reservation.save!
       redirect_to reservation_path(@reservation)
     else
       render :new

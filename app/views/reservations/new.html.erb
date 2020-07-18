@@ -6,13 +6,13 @@
       <h5 class="card-title font-weight-bold">Name: <%= @tool.name %></h5>
       <h6 class="card-subtitle mb-2 text-muted">Category: <%= @tool.category %></h6>
       <h2 class="card-trip-pricing">Price: $<%= @tool.price %></h2>
-      <%= simple_form_for(@reservation) do |f| %>
-      <%= f.label "Start" %>
-      <%= f.datetime_field :start_date %>
-      <%= f.label "End" %>
-      <%= f.datetime_field :end_start %>
-      <%= link_to "Add Reserve", reservations_path %>
+      <%= simple_form_for([@tool, @reservation]) do |f| %>
+        <%= f.label "Start" %>
+        <%= f.datetime_field :start_date %>
+        <%= f.label "End" %>
+        <%= f.datetime_field :end_start %>
+        <%= f.submit %>
+      <% end %>
     </div>
   </div>
 </div>
-<% end %>
