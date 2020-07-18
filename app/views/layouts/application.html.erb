@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <% if (current_user || !current_page?(controller: 'pages', action: 'home')) %>
+    <% if (current_user || !current_page?('/pages/home')) %>
       <%= render 'shared/navbar' %>
     <% end %>
     <%= render 'shared/flashes' %>
