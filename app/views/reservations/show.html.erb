@@ -1,1 +1,14 @@
 
+        <h2>New Reservation</h2>
+        <%= simple_form_for([@tool, @reservation]) do |reservation| %>
+        <h3><%= @reservation.tool.name %></h3>
+        <h3><%= @reservation.user.name %></h3>
+        <h5>Date:</h5>
+        <h5>Start <%= @reservation.start_date.strftime("%d %B") %></h5>
+        <h5>End <%= @reservation.end_start.strftime("%d %B") %></h5>
+        <h3>Price per day: $ <%= @reservation.tool.price  %></h3>
+        <% end %>
+
+        <%= link_to reservations_path do %>
+        <button class="btn btn-gradient"> All Reservations</button>
+        <% end %>
