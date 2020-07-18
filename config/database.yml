@@ -14,6 +14,9 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
+cloudinary:
+  service: Cloudinary
+
 default: &default
   adapter: postgresql
   encoding: unicode

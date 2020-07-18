@@ -1,6 +1,7 @@
 <div class="container">
   <h1><%= @tool.name %></h1>
   <h4>Category: <%= @tool.category %></h4>
+  <%= cl_image_tag @tool.photo.key, height: 300, width: 400, crop: :fill %>
   <h4>Price: $<%= @tool.price %></h4>
   <h4>Rating:
     <% counter = 0 %>
