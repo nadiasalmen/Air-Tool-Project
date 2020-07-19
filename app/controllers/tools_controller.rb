@@ -2,6 +2,7 @@ class ToolsController < ApplicationController
 
   def index
     @tools = Tool.all
+    @user = current_user
   end
 
   def my_tools

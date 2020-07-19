@@ -1,26 +1,40 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'tools_banner.jpg' %>');">
   <div class="banner-content">
     <div class="container">
-      <h1>Air Tool</h1>
-      <%= link_to "Add New Tool", new_tool_path, class: "btn btn-outline-warning" %>
+      <div class="d-flex">
+        <div>
+          <h1>AirTool</h1>
+          <p>Where you can find the tool</p>
+          <%= link_to "Add New Tool", new_tool_path, class: "btn btn-warning" %>
+        </div>
+        <div>
+          <div class="arrow arrow-first"></div>
+          <div class="arrow arrow-second"></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="container">
 <br>
-<h1>Tools list</h1>
-  <div class="row" >
+  <h1>Welcome, choose a tool</h1>
+  <div class="row">
     <% @tools.each do |tool| %>
-      <div class="col-sm-4">
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title font-weight-bold"><%= tool.name %></h5>
-            <h6 class="card-subtitle mb-2 text-muted"><%= tool.category %></h6>
-            <p class="card-text">Price: $<%= tool.price %></p>
-            <%= link_to "Reserve", tool_path(tool), class: "card-link"%>
-          </div>
+        <div class="col-sm-4">
+          <%= link_to tool, class: "text-decoration-none text-reset" do %>
+            <div class="card-trip m-2">
+              <img src="https://source.unsplash.com/featured/?<%= tool.name %>" />
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= tool.name %></h2>
+                  <p><%= tool.category %></p>
+                </div>
+                <h2 class="card-trip-pricing">$AR <%= tool.price %></h2>
+                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+              </div>
+            </div>
+          <% end %>
         </div>
-      </div>
     <% end %>
   </div>
 </div>
