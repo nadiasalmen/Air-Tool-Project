@@ -1,14 +1,19 @@
-
-        <h2>New Reservation</h2>
+<div class="card-trip">
+  <img src="https://images.unsplash.com/photo-1581166397057-235af2b3c6dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"/>
+  <div class="card-trip-infos">
+    <div div class="container">
+        <h1><strong> Check your information </h1>
         <%= simple_form_for([@tool, @reservation]) do |reservation| %>
-        <h3><%= @reservation.tool.name %></h3>
-        <h3><%= @reservation.user.name %></h3>
-        <h5>Date:</h5>
+        <h3>Tool: <%= @reservation.tool.name %></h3>
+        <h3>Owner of the tool: <%= @reservation.owner.name %></h3>
+        <h5>Date of reservation:</h5>
         <h5>Start <%= @reservation.start_date.strftime("%d %B") %></h5>
         <h5>End <%= @reservation.end_start.strftime("%d %B") %></h5>
-        <h3>Price per day: $ <%= @reservation.tool.price  %></h3>
+        <h3>Total price: $ <%= @reservation.tool.price * (@reservation.end_start - @reservation.start_date )  %></h3>
         <% end %>
-
         <%= link_to reservations_path do %>
         <button class="btn btn-gradient"> All Reservations</button>
         <% end %>
+        </div>
+  </div>
+</div>
