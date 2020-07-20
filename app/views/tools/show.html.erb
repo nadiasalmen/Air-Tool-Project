@@ -3,7 +3,7 @@
   <h4>Category: <%= @tool.category %></h4>
   <h4>Price: $<%= @tool.price %></h4>
   <h4>Rating:
-    <% if @tool.rating == 0 %>
+    <% if @tool.rating.nil? %>
       <p>No rating for this tool</p>
     <% else %>
       <% counter = 0 %>
@@ -21,5 +21,28 @@
   <%= link_to "Edit", edit_tool_path, class: "btn-gradient" %>
   <%= link_to "Delete this tool", tool_path, method: :delete, class: "btn-gradient" %>
   <%= link_to "Reserve this tool", new_tool_reservation_path(@tool), class: "btn-gradient" %>
-  <%= link_to "Home", tools_path, class: "btn-gradient" %>
+  <br>
+  <br>
+  <h3>Reviews</h3>
+  <ul class="list-group">
+  <% @tool.reviews.each do |review| %>
+    <li class="list-group-item">
+      <div class="d-flex justify-content-between">
+        <p><%= review.content %></p>
+        <p><%= review.created_at %></p>
+      </div>
+    </li>
+  <% end %>
+  </ul>
+  <%= simple_form_for([@tool, @review]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :content %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn-gradient" %>
+  </div>
+<% end %>
 </div>
