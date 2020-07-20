@@ -9,6 +9,7 @@ class ReviewsController < ApplicationController
     # we need `restaurant_id` to associate review with corresponding restaurant
     @tool = Tool.find(params[:tool_id])
     @review.tool = @tool
+    @review.user_id = current_user.id
     @review.save
     redirect_to tool_path(@tool)
   end

@@ -27,9 +27,10 @@
   <ul class="list-group">
   <% @tool.reviews.each do |review| %>
     <li class="list-group-item">
-      <div class="d-flex justify-content-between">
-        <p><%= review.content %></p>
-        <p><%= review.created_at %></p>
+      <div class="d-flex">
+        <div class="mr-auto p-2"><%= review.content %></div>
+        <div class="p-2"><%= review.created_at %></div>
+        <div class="p-2">by <strong><%= review.user.name %></strong></div>
       </div>
     </li>
   <% end %>
