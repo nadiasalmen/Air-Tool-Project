@@ -1,8 +1,10 @@
 <br>
 <div class="container">
+  <h1>New tool</h1>
   <%= simple_form_for(@tool) do |f| %>
   <%= f.input :name %>
-  <%= f.input :category %>
+  <%= f.input :adress, label: 'Address' %>
+  <%= f.input :source_type, :label => "Category", :collection => ["Industrial Tools","House Tools", "Rare Tools", "New Tools"], :selected => "Industrial Tools" %>
   <%= f.input :price %>
   <%= f.input :description, as: :text, :input_html => { :cols => 5, :rows => 5 } %>
   <%= f.submit %>

@@ -3,6 +3,15 @@ class ToolsController < ApplicationController
   def index
     @tools = Tool.all
     @user = current_user
+    @tool_geo = Tool.where.not(latitude: nil, longitude: nil)
+
+    @markers = @tool_geo.map do |tool|
+      {
+        lat: tool.latitude,
+        lng: tool.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { tool: tool })
+      }
+    end
   end
 
   def my_tools
