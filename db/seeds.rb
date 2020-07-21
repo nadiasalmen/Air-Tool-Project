@@ -40,13 +40,11 @@ end
 
 puts "creating new reservation"
 
-t1 = Time.parse("2015-11-16 14:40:34")
-t2 = Time.parse("2015-11-20 16:20:23")
 10.times do
   reservation = Reservation.new(
     status: Faker::Boolean.boolean,
-    start_date: rand(t1..t2),
-    end_start: rand(t1..t2)
+    start_date: Date.today-rand(10000),
+    end_start: Date.today+rand(10000),
   )
   reservation.user = User.all.sample
   # validar que no sea user = owner
