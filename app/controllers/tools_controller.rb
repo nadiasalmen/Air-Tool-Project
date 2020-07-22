@@ -4,7 +4,6 @@ class ToolsController < ApplicationController
     @tools = Tool.all
     @user = current_user
     @tool_geo = Tool.where.not(latitude: nil, longitude: nil)
-
     @markers = @tool_geo.map do |tool|
       {
         lat: tool.latitude,
@@ -61,6 +60,6 @@ class ToolsController < ApplicationController
   private
 
   def tool_params
-    params.require(:tool).permit(:name, :category, :status, :price)
+    params.require(:tool).permit(:name, :description, :category, :status, :price, :adress)
   end
 end
