@@ -24,13 +24,13 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import { initMapbox, initAutocomplete } from '../plugins/init_mapbox';
-import { initSelect2 } from '../plugins/initSelect2'
+import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_mapbox';
+
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initAutocomplete();
-  initSelect2();
   // Call your functions here, e.g:
   // initSelect2();
 });
