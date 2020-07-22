@@ -4,6 +4,10 @@ class ToolsController < ApplicationController
     @tools = Tool.all
     @user = current_user
     @tool_geo = Tool.where.not(latitude: nil, longitude: nil)
+    if params[:term].present?
+      @tools = Tool.search_by_name(params[:term])
+    else
+      @tools = Tool.all
 
     @markers = @tool_geo.map do |tool|
       {
@@ -12,6 +16,7 @@ class ToolsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { tool: tool })
       }
     end
+  end
   end
 
   def my_tools

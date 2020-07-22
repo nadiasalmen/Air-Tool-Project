@@ -18,6 +18,10 @@
 <div class="container">
 <br>
   <h1>Welcome, choose a tool</h1>
+  <h3><%= form_tag tools_path, method: :get do %>
+  <%= text_field_tag 'term', params[:term], placeholder: "Search tools" %>
+  <%= submit_tag 'Search!' %>
+<% end %></h3>
   <div class="d-flex">
     <div id="map"
        style="width: 100%; height: 600px;"
@@ -44,3 +48,4 @@
     </div>
   </div>
 </div>
+
