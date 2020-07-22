@@ -1,18 +1,23 @@
 class ReservationsController < ApplicationController
   def index
+    skip_authorization
+    skip_policy_scope
     @reservations = Reservation.all
   end
 
   def show
+    skip_authorization
     @reservation = Reservation.find(params[:id])
   end
 
   def new
+    skip_authorization
     @tool = Tool.find(params[:tool_id])
     @reservation = Reservation.new
   end
 
   def create
+    skip_authorization
     @tool = Tool.find(params[:tool_id])
     @reservation = Reservation.new(reservation_params)
     @reservation.tool = @tool

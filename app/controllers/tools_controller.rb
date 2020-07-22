@@ -1,13 +1,16 @@
 class ToolsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :new]
 
   def index
-    @tools = Tool.all
+    @tools = policy_scope(Tool)
     @user = current_user
-    @tool_geo = Tool.where.not(latitude: nil, longitude: nil)
+    @tool_geo = policy_scope(Tool).where.not(latitude: nil, longitude: nil)
+    
     if params[:term].present?
-      @tools = Tool.search_by_name(params[:term])
+      @tools = policy_scope(Tool).search_by_name(params[:term])
     else
-      @tools = Tool.all
+      @tools = policy_scope(Tool).all
+    end
 
     @markers = @tool_geo.map do |tool|
       {
@@ -20,23 +23,26 @@ class ToolsController < ApplicationController
   end
 
   def my_tools
-    @tools = Tool.where(user: current_user)
+    @tools = policy_scope(Tool).where(user: current_user)
   end
 
   def show
-    @tool = Tool.find(params[:id])
+    @tool = policy_scope(Tool).find(params[:id])
     @review = Review.new
+    skip_authorization
   end
 
   def new
-    @tool = Tool.new
+    @tool = policy_scope(Tool).new
+    authorize @tool
   end
 
   def create
-    @tool = Tool.new(tool_params)
+    @tool = policy_scope(Tool).new(tool_params)
     @tool.user = current_user
     @tool.status = true
     @tool.rating = 0
+    authorize @tool
     if @tool.save!
       redirect_to tool_path(@tool)
     else
@@ -45,11 +51,13 @@ class ToolsController < ApplicationController
   end
 
   def edit
-    @tool = Tool.find(params[:id])
+    @tool = policy_scope(Tool).find(params[:id])
+    authorize @tool
   end
 
   def update
-    @tool = Tool.find(params[:id])
+    @tool = policy_scope(Tool).find(params[:id])
+    authorize @tool
     if @tool.update(tool_params)
       redirect_to tool_path(@tool)
     else
@@ -58,7 +66,8 @@ class ToolsController < ApplicationController
   end
 
   def destroy
-    @tool = Tool.find(params[:id])
+    @tool = policy_scope(Tool).find(params[:id])
+    authorize @tool
     @tool.destroy
     redirect_to tools_path
   end
