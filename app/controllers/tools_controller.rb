@@ -5,6 +5,12 @@ class ToolsController < ApplicationController
     @tools = policy_scope(Tool)
     @user = current_user
     @tool_geo = policy_scope(Tool).where.not(latitude: nil, longitude: nil)
+    
+    if params[:term].present?
+      @tools = policy_scope(Tool).search_by_name(params[:term])
+    else
+      @tools = policy_scope(Tool).all
+    end
 
     @markers = @tool_geo.map do |tool|
       {
@@ -13,6 +19,7 @@ class ToolsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { tool: tool })
       }
     end
+  end
   end
 
   def my_tools

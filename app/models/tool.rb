@@ -1,7 +1,10 @@
 class Tool < ApplicationRecord
   belongs_to :user
   has_many :reservations, dependent: :destroy
-  
+
+  include PgSearch
+  pg_search_scope :search_by_name, against: [:name]
+
   geocoded_by :adress
   after_validation :geocode, if: :will_save_change_to_adress?
 
