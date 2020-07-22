@@ -18,9 +18,13 @@
   <% else %>
     <h4>Description: <%= @tool.description %></h4>
   <% end %>
-  <%= link_to "Edit", edit_tool_path, class: "btn-gradient" %>
-  <%= link_to "Delete this tool", tool_path, method: :delete, class: "btn-gradient" %>
-  <%= link_to "Reserve this tool", new_tool_reservation_path(@tool), class: "btn-gradient" %>
+  <% if policy(@tool).update? %>
+    <%= link_to "Edit tool", edit_tool_path, class: "btn-gradient" %>
+  <% end %>
+  <% if policy(@tool).destroy? %>
+    <%= link_to "Delete tool", tool_path, method: :delete, class: "btn-gradient" %>
+  <% end %>
+  <%= link_to "Reserve tool", new_tool_reservation_path(@tool), class: "btn-gradient" %>
   <br>
   <br>
   <h3>Reviews</h3>
