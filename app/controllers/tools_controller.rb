@@ -12,6 +12,7 @@ class ToolsController < ApplicationController
       @tools = policy_scope(Tool).all
     end
 
+
     @markers = @tool_geo.map do |tool|
       {
         lat: tool.latitude,
@@ -74,6 +75,6 @@ class ToolsController < ApplicationController
   private
 
   def tool_params
-    params.require(:tool).permit(:name, :category, :status, :price)
+    params.require(:tool).permit(:name, :description, :category, :status, :price, :adress)
   end
 end
