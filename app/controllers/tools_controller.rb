@@ -28,7 +28,7 @@ class ToolsController < ApplicationController
 
   def show
     @tool = policy_scope(Tool).find(params[:id])
-    @review = Review.new
+    @review = policy_scope(Review).new
     skip_authorization
   end
 
