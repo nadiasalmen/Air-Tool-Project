@@ -1,6 +1,7 @@
 class Tool < ApplicationRecord
   belongs_to :user
   has_many :reservations, dependent: :destroy
+  has_one_attached :photo
 
   include PgSearch
   pg_search_scope :search_by_name, against: [:name]

@@ -32,14 +32,22 @@
           <div class="col-sm-6">
             <%= link_to tool, class: "text-decoration-none text-reset" do %>
               <div class="card-trip m-2">
-                <img src="https://source.unsplash.com/featured/?<%= tool.name %>" />
+                <% if tool.photo.present? %>
+                  <%= cl_image_tag tool.photo.key, height: 300, width: 400, crop: :fill %>
+                <% else %>
+                  <%= image_tag "default_tool.png", height: 300, width: 400, crop: :fill %>
+                <% end %>
                 <div class="card-trip-infos">
                   <div>
                     <h2><%= tool.name %></h2>
                     <p><%= tool.category %></p>
                   </div>
                   <h2 class="card-trip-pricing">$AR <%= tool.price %></h2>
-                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                  <% if tool.user.avatar.present? %>
+                    <%= cl_image_tag tool.user.avatar.key, class: "card-trip-user avatar-bordered", 'aria-haspopup': true, 'aria-expanded': false %>
+                  <% else %>
+                    <%= image_tag "default_avatar.jpg", class: "card-trip-user avatar-bordered", 'aria-haspopup': true, 'aria-expanded': false %>
+                  <% end %>
                 </div>
               </div>
             <% end %>
