@@ -21,3 +21,4 @@ class Reservation < ApplicationRecord
     errors.add(:owner, "is the same as user") unless owner != user
   end
 end
+
