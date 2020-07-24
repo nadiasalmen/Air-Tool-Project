@@ -1,23 +1,23 @@
 <div class="container">
-  <h1><%= @tool.name %></h1>
-  <h4>Category: <%= @tool.category %></h4>
-  <h4>Price: $<%= @tool.price %></h4>
-  <h4>Rating:
-    <% if @tool.rating.nil? %>
-      <p>No rating for this tool</p>
-    <% else %>
-      <% counter = 0 %>
-      <% 5.times do %>
-        <i class="fa <%= @tool.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
-        <% counter += 1 %>
+  <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+      <h2><%= @tool.name %></h2>
+      <p>Price: $ <%= @tool.price %></p>
+      <% if @tool.rating.nil? || @tool.rating == 0 %>
+        <p>No rating for this tool</p>
+      <% else %>
+        <p>Rating:
+          <% counter = 0 %>
+          <% 5.times do %>
+          <i class="fa <%= @tool.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+          <% counter += 1 %>
+          <% end %>
+        </p>
       <% end %>
-    <% end %>
-  </h4>
-  <% if @tool.description.nil? == true %>
-    <p>No description found</p>
-  <% else %>
-    <h4>Description: <%= @tool.description %></h4>
-  <% end %>
+      <p><%= @tool.description %></p>
+    </div>
+  </div>
   <% if policy(@tool).update? %>
     <%= link_to "Edit tool", edit_tool_path, class: "btn-gradient" %>
   <% end %>
@@ -27,7 +27,7 @@
   <%= link_to "Reserve tool", new_tool_reservation_path(@tool), class: "btn-gradient" %>
   <br>
   <br>
-  <h3>Reviews</h3>
+  <h4>Reviews</h4>
   <ul class="list-group">
   <% @tool.reviews.each do |review| %>
     <li class="list-group-item">
