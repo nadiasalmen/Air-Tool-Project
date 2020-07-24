@@ -1,6 +1,10 @@
 <div class="container">
   <div class="card-product">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <% if @tool.photo.present? %>
+      <%= cl_image_tag @tool.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <%= image_tag "default_tool.png", height: 300, width: 400, crop: :fill %>
+    <% end %>
     <div class="card-product-infos">
       <h2><%= @tool.name %></h2>
       <p>Price: $ <%= @tool.price %></p>

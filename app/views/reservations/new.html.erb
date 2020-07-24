@@ -1,5 +1,9 @@
 <div class="card-trip">
-  <img src="https://images.unsplash.com/photo-1581166397057-235af2b3c6dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"/>
+  <% if @tool.photo.present? %>
+    <%= cl_image_tag @tool.photo.key %>
+  <% else %>
+    <%= image_tag "default_tool.png" %>
+  <% end %>
   <div class="card-trip-infos">
     <div>
       <h1 class="card-title font-weight-bold">Name: <%= @tool.name %></h2>

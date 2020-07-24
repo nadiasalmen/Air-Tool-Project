@@ -1,11 +1,15 @@
 <div class="container">
   <h1>Your Reservations</h1>
-  <div class="d-flex">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="card-trip m-2">
+  <div>
+    <div class= "row justify-content-lg-center">
+      <div class= "col col-lg-center">
+        <div class="card-trip container">
           <% @reservations.each do |reservation| %>
-          <img src="https://images.unsplash.com/photo-1581166397057-235af2b3c6dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"/>
+            <% if reservation.tool.photo.present? %>
+              <%= cl_image_tag reservation.tool.photo.key %>
+            <% else %>
+              <%= image_tag "default_tool.png" %>
+            <% end %>
             <div class="card-trip-infos">
               <div>
                 <h3>Tool: <%= reservation.tool.name %></h3>
@@ -15,10 +19,13 @@
                 <p class="font-weight-bold">Start reservation: <%= reservation.start_date %></p>
                 <p class="font-weight-bold">End reservation: <%= reservation.end_start %></p>
               </div>
+              <div>
+                <%= link_to "Go Back", tools_path, class: "btn-gradient" %>
+              </div>
             </div>
           <% end %>
         </div>
-      <div class="container">
-    <%= link_to "Go Back", tools_path, class: "btn-gradient" %>
+      </div>
+    </div>
   </div>
 </div>
