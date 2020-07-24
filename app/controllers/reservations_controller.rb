@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
   def index
     skip_authorization
     skip_policy_scope
-    @reservations = Reservation.all
+    @reservations = current_user.reservations
   end
 
   def show
@@ -23,7 +23,7 @@ class ReservationsController < ApplicationController
     @reservation.tool = @tool
     @reservation.user = current_user
     @reservation.status = "New"
-    if @reservation.save!
+    if @reservation.save
       redirect_to reservation_path(@reservation)
     else
       render :new
@@ -46,6 +46,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:status, :start_date, :end_start)
+    params.require(:reservation).permit(:status, :start_date, :end_start).merge(user_id: current_user.id)
   end
+
 end
