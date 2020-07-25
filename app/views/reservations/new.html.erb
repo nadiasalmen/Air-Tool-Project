@@ -10,7 +10,7 @@
     <div>
       <h1 class="card-title font-weight-bold">Name: <%= @tool.name %></h1>
       <h2 class="card-subtitle mb-2 text-muted">Category: <%= @tool.category %><h2>
-      <h2 class="card-trip-pricing">Price per day: $<%= @tool.price %></h2>
+      <h2 class="card-trip-pricing">Price per day: $ <%= @tool.price %></h2>
         <%= simple_form_for([@tool, @reservation]) do |f| %>
           <%= f.input :start_date, as: :string, input_html: { class: "datepicker" } %>
           <%= f.submit %>

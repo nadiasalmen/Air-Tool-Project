@@ -1,8 +1,8 @@
-<div class="card-trip">
+<div class="container">
   <img src="https://images.unsplash.com/photo-1581166397057-235af2b3c6dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"/>
-  <div class="card-trip-infos">
-    <div div class="container">
-        <h1><strong> Check your information </h1>
+  <div>
+    <div>
+        <h1><strong> Check your information </strong></h1>
         <%= simple_form_for([@tool, @reservation]) do |reservation| %>
           <h3>Tool: <%= @reservation.tool.name %></h3>
           <h3>Owner of the tool: <%= @reservation.owner.name %></h3>
@@ -14,6 +14,6 @@
         <%= link_to reservations_path do %>
         <button class="btn btn-gradient"> All Reservations</button>
         <% end %>
-        </div>
+    </div>
   </div>
 </div>
