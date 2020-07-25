@@ -12,7 +12,7 @@ class Reservation < ApplicationRecord
   def end_start_validate
     return if end_start.nil? || start_date.nil?
 
-    if end_start <= start_date
+    if end_start < start_date
       errors.add(:end_start, "must be greater than start date")
     end
   end
