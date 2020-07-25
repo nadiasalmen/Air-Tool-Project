@@ -78,8 +78,8 @@ puts "Creating Reservations for Tool 1"
 5.times do
   reservation = Reservation.new(
     status: Faker::Boolean.boolean,
-    start_date: Date.today-rand(10000),
-    end_start: Date.today+rand(10000),
+    start_date: Date.today-rand(30),
+    end_start: Date.today+rand(30),
   )
   reservation.user = (User.all - [tool.user]).sample
   reservation.tool = tool
@@ -107,8 +107,8 @@ puts "Creating Reservations for Tool 2"
 5.times do
   reservation = Reservation.new(
     status: Faker::Boolean.boolean,
-    start_date: Date.today-rand(10000),
-    end_start: Date.today+rand(10000),
+    start_date: Date.today-rand(30),
+    end_start: Date.today+rand(30),
   )
   reservation.user = (User.all - [tool.user]).sample
   reservation.tool = tool
@@ -136,8 +136,8 @@ puts "Creating Reservations for Tool 3"
 5.times do
   reservation = Reservation.new(
     status: Faker::Boolean.boolean,
-    start_date: Date.today-rand(10000),
-    end_start: Date.today+rand(10000),
+    start_date: Date.today-rand(30),
+    end_start: Date.today+rand(30),
   )
   reservation.user = (User.all - [tool.user]).sample
   reservation.tool = tool
@@ -165,8 +165,8 @@ puts "Creating Reservations for Tool 4"
 5.times do
   reservation = Reservation.new(
     status: Faker::Boolean.boolean,
-    start_date: Date.today-rand(10000),
-    end_start: Date.today+rand(10000),
+    start_date: Date.today-rand(30),
+    end_start: Date.today+rand(30),
   )
   reservation.user = (User.all - [tool.user]).sample
   reservation.tool = tool
@@ -194,8 +194,8 @@ puts "Creating Reservations for Tool 5"
 5.times do
   reservation = Reservation.new(
     status: Faker::Boolean.boolean,
-    start_date: Date.today-rand(10000),
-    end_start: Date.today+rand(10000),
+    start_date: Date.today-rand(30),
+    end_start: Date.today+rand(30),
   )
   reservation.user = (User.all - [tool.user]).sample
   reservation.tool = tool
@@ -223,8 +223,8 @@ puts "Creating Reservations for Tool 6"
 5.times do
   reservation = Reservation.new(
     status: Faker::Boolean.boolean,
-    start_date: Date.today-rand(10000),
-    end_start: Date.today+rand(10000),
+    start_date: Date.today-rand(30),
+    end_start: Date.today+rand(30),
   )
   reservation.user = (User.all - [tool.user]).sample
   reservation.tool = tool
@@ -252,8 +252,8 @@ puts "Creating Reservations for Tool 7"
 5.times do
   reservation = Reservation.new(
     status: Faker::Boolean.boolean,
-    start_date: Date.today-rand(10000),
-    end_start: Date.today+rand(10000),
+    start_date: Date.today-rand(30),
+    end_start: Date.today+rand(30),
   )
   reservation.user = (User.all - [tool.user]).sample
   reservation.tool = tool
@@ -270,7 +270,7 @@ tool = Tool.new(
   price: Faker::Number.number(digits: 3),
   rating: Faker::Number.between(from: 1, to: 5)
 )
-file = URI.open('https://http2.mlstatic.com/clavadora-engrampadora-neumatica-lusqtoff-grapadora-2-en-1-D_NQ_NP_659067-MLA32319167405_092019-F.webp')
+file = URI.open('https://http2.mlstatic.com/aspiradora-industrial-60-litros-2000w-polvo-agua-doble-motor-D_NQ_NP_900748-MLA31056432883_062019-F.webp')
 tool.photo.attach(io: file, filename: "#{tool.name}.png", content_type: 'image/png')
 tool.user = User.all.sample
 tool.adress = tool.user.location
@@ -281,8 +281,8 @@ puts "Creating Reservations for Tool 8"
 5.times do
   reservation = Reservation.new(
     status: Faker::Boolean.boolean,
-    start_date: Date.today-rand(10000),
-    end_start: Date.today+rand(10000),
+    start_date: Date.today-rand(30),
+    end_start: Date.today+rand(30),
   )
   reservation.user = (User.all - [tool.user]).sample
   reservation.tool = tool
@@ -310,8 +310,8 @@ puts "Creating Reservations for Tool 9"
 5.times do
   reservation = Reservation.new(
     status: Faker::Boolean.boolean,
-    start_date: Date.today-rand(10000),
-    end_start: Date.today+rand(10000),
+    start_date: Date.today-rand(30),
+    end_start: Date.today+rand(30),
   )
   reservation.user = (User.all - [tool.user]).sample
   reservation.tool = tool
@@ -339,8 +339,8 @@ puts "Creating Reservations for Tool 10"
 5.times do
   reservation = Reservation.new(
     status: Faker::Boolean.boolean,
-    start_date: Date.today-rand(10000),
-    end_start: Date.today+rand(10000),
+    start_date: Date.today-rand(30),
+    end_start: Date.today+rand(30),
   )
   reservation.user = (User.all - [tool.user]).sample
   reservation.tool = tool
@@ -368,8 +368,8 @@ puts "Creating Reservations for Tool 11"
 5.times do
   reservation = Reservation.new(
     status: Faker::Boolean.boolean,
-    start_date: Date.today-rand(10000),
-    end_start: Date.today+rand(10000),
+    start_date: Date.today-rand(30),
+    end_start: Date.today+rand(30),
   )
   reservation.user = (User.all - [tool.user]).sample
   reservation.tool = tool
@@ -397,8 +397,8 @@ puts "Creating Reservations for Tool 12"
 5.times do
   reservation = Reservation.new(
     status: Faker::Boolean.boolean,
-    start_date: Date.today-rand(10000),
-    end_start: Date.today+rand(10000),
+    start_date: Date.today-rand(30),
+    end_start: Date.today+rand(30),
   )
   reservation.user = (User.all - [tool.user]).sample
   reservation.tool = tool
