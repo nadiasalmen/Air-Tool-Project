@@ -1,13 +1,14 @@
-<div class="card-trip">
-  <% if @tool.photo.present? %>
-    <%= cl_image_tag @tool.photo.key %>
-  <% else %>
-    <%= image_tag "default_tool.png" %>
-  <% end %>
-</div>
+<div class="container">
+  <div class="card-trip">
+    <% if @tool.photo.present? %>
+      <%= cl_image_tag @tool.photo.key %>
+    <% else %>
+      <%= image_tag "default_tool.png" %>
+    <% end %>
+  </div>
   <div class="card-trip-infos">
     <div>
-      <h1 class="card-title font-weight-bold">Name: <%= @tool.name %></h2>
+      <h1 class="card-title font-weight-bold">Name: <%= @tool.name %></h1>
       <h2 class="card-subtitle mb-2 text-muted">Category: <%= @tool.category %></p>
       <h2 class="card-trip-pricing">Price per day: $<%= @tool.price %></h2>
         <%= simple_form_for([@tool, @reservation]) do |f| %>
