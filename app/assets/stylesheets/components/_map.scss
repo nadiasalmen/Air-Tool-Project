@@ -6,3 +6,9 @@
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
+
+.map-div {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0; /* required */
+}
