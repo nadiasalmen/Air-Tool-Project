@@ -20,6 +20,8 @@ class ReservationsController < ApplicationController
     skip_authorization
     @tool = Tool.find(params[:tool_id])
     @reservation = Reservation.new(reservation_params)
+    @reservation.start_date = params[:reservation][:start_date].split[0]
+    @reservation.end_start = params[:reservation][:start_date].split[2]
     @reservation.tool = @tool
     @reservation.user = current_user
     @reservation.status = "New"
@@ -46,7 +48,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:status, :start_date, :end_start).merge(user_id: current_user.id)
+    params.require(:reservation).permit(:status).merge(user_id: current_user.id)
   end
 
 end

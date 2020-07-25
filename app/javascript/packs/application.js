@@ -36,4 +36,14 @@ document.addEventListener('turbolinks:load', () => {
 
   // Call your functions here, e.g:
   // initSelect2();
+
+});
+
+import flatpickr from 'flatpickr';
+import 'flatpickr/dist/flatpickr.min.css'
+
+flatpickr(".datepicker", {
+  mode: "range",
+  minDate: "today",
+  altInput: true,
 });
