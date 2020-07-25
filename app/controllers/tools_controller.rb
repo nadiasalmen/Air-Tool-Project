@@ -9,9 +9,13 @@ class ToolsController < ApplicationController
     if params[:term].present?
       @tools = policy_scope(Tool).search_by_name(params[:term])
     else
-      @tools = policy_scope(Tool).all
+      if params[:search]
+        @filter = params[:search][:category]
+        @tools = @filter.empty? ?  @tools = policy_scope(Tool).all : policy_scope(Tool).where(category: @filter)
+      else
+         @tools = policy_scope(Tool).all
+      end
     end
-
 
     @markers = @tool_geo.map do |tool|
       {

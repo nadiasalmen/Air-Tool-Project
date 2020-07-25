@@ -18,20 +18,25 @@
 <div class="container">
 <br>
   <h1>Welcome, choose a tool</h1>
-  <h3><%= form_tag tools_path, method: :get do %>
-  <div class="row align-items-center flex-nowrap">
-    <%= text_field_tag 'term', params[:term], placeholder: "Search tools", class: "form-control" %>
-    <%= submit_tag 'Search!', class: "btn btn-primary" %>
-  </div>
-<% end %></h3>
   <div class="container">
+      <%= form_tag tools_path, method: :get do %>
+      <div class="row align-items-center flex-nowrap">
+        <%= text_field_tag 'term', params[:term], placeholder: "Search tools", class: "form-control" %>
+        <%= submit_tag 'Search by name', class: "btn btn-primary mr-2" %>
+        <%= simple_form_for :search, url: tools_path, method: :get do |f| %>
+          <%= f.select :category, ["Industrial Tools","House Tools", "Rare Tools", "New Tools"], include_blank: '(All)' %>
+          <%= f.submit "Search by category", class: "btn btn-primary ml-2" %>
+        <% end %>
+      </div>
+    <% end %>
+    <br>
     <div class="row">
-      <div class="col-4">
+      <div class="col-4 map-div">
         <div id="map"
            style="margin: 8px; width: 100%; height: 600px;"
            data-markers="<%= @markers.to_json %>"
            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-           class="col-sm position-sticky"></div>
+           ></div>
       </div>
       <div class="col-8">
         <div class="row">
