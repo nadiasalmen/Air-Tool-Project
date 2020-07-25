@@ -1,7 +1,7 @@
 <div class="container">
   <img src="https://images.unsplash.com/photo-1581166397057-235af2b3c6dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"/>
-  <div>
-    <div>
+    <div class="card-trip-infos">
+      <div class="container">
         <h1><strong> Check your information </strong></h1>
         <%= simple_form_for([@tool, @reservation]) do |reservation| %>
           <h3>Tool: <%= @reservation.tool.name %></h3>
