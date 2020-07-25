@@ -60,7 +60,7 @@ puts "Creating New Tools"
 puts "Creating Tool 1"
 
 tool = Tool.new(
-  name: "Hidrolavadora Autostop Dosificador",
+  name: "Hidrolavadora Autostop Dosificador - Aburrido en la Cuarentena ®",
   description: "Ideal para lavar tu bici, auto o moto y para limpiar pisos y paredes. Accesorios incluidos lanza, filtro y dispenser de jabon",
   category: "Rare Tools",
   status: true,
