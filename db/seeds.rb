@@ -61,7 +61,7 @@ puts "Creating Tool 1"
 
 tool = Tool.new(
   name: "Hidrolavadora Autostop Dosificador",
-  description: "Usos recomendados: Lavar autos, lavar motos, limpiar pisos y paredes. Accesorios incluidos lanza, filtro y dispenser de jabon",
+  description: "Ideal para lavar tu bici, auto o moto y para limpiar pisos y paredes. Accesorios incluidos lanza, filtro y dispenser de jabon",
   category: "Rare Tools",
   status: true,
   price: Faker::Number.number(digits: 3),
@@ -89,8 +89,8 @@ end
 puts "Creating Tool 2"
 
 tool = Tool.new(
-  name: "Set Herramientas para el Hogar",
-  description: "Completo kit de 132 herramientas con todo lo que se necesita para realizar cualquier arreglo, fácil de transportar de forma ordenada y cómoda gracias a su maletín rígido desplegable.",
+  name: "Set Herramientas para el Hogar - Aburrido en la Cuarentena ®",
+  description: "Aburrido en la cuarentena?? Completo kit de 132 herramientas con todo lo que se necesita para realizar cualquier arreglo, fácil de transportar de forma ordenada y cómoda gracias a su maletín rígido desplegable.",
   category: "House Tools",
   status: true,
   price: Faker::Number.number(digits: 3),
@@ -118,8 +118,8 @@ end
 puts "Creating Tool 3"
 
 tool = Tool.new(
-  name: "Set De Destornillador",
-  description: "Incluye seis puntas intercambiables. Formatos en puntas planas y phillips. Agarre antideslizante. Para todo tipo de usos",
+  name: "Set De Destornillador - Aburrido en la Cuarentena ®",
+  description: " Aburrido en la cuarentena?? Ideal para todo tipo de uso!! Incluye seis puntas intercambiables. Formatos en puntas planas y phillips. Agarre antideslizante",
   category: "House Tools",
   status: true,
   price: Faker::Number.number(digits: 3),
@@ -147,8 +147,8 @@ end
 puts "Creating Tool 4"
 
 tool = Tool.new(
-  name: "Pinza Multifunción",
-  description: "Pinza Multifunción Bahco Mtt151 18 Funciones + Estuche. CARACTERÍSTICAS: Cuchillas de acero inoxidable resistente a la corrosión. Cuerpo de aluminio de alta resistencia.",
+  name: "Pinza Multifunción - Aburrido en la Cuarentena ®",
+  description: " Aburrido en la cuarentena?? Ideal para sujetar cualquier cosa!!. Cuchillas de acero inoxidable resistente a la corrosión. Cuerpo de aluminio de alta resistencia.",
   category: "House Tools",
   status: true,
   price: Faker::Number.number(digits: 3),
@@ -176,8 +176,8 @@ end
 puts "Creating Tool 5"
 
 tool = Tool.new(
-  name: "Generador portátil",
-  description: "Alternativa segura para los cortes de suministro. Monofásico. Potencia máxima de 5500W. Tipo de arranque: eléctrico y manual. Pesa 87kg. Consume 3.5L por hora. Cuenta con una autonomía de 8.1 horas. Dimensiones: 844 mm de largo x 530 mm de ancho x 571 mm de alto.",
+  name: "Generador portátil - Aburrido en la Cuarentena ®",
+  description: "Aburrido en la cuarentena?? Ilumina TODO!! Alternativa segura para los cortes de suministro. Monofásico. Potencia máxima de 5500W.",
   category: "Industrial Tools",
   status: true,
   price: Faker::Number.number(digits: 3),
@@ -205,8 +205,8 @@ end
 puts "Creating Tool 6"
 
 tool = Tool.new(
-  name: "Aspiradora Home & Garden",
-  description: "Aspiradora de mano. Funciona sin bolsa. Sistema de filtrado incorporado. Se enciende manualmente. Su potencia es de 500W y puede ser regulada. Tus espacios siempre deslumbrantes.",
+  name: "Aspiradora Home & Garden - Aburrido en la Cuarentena ®",
+  description: "Aburrido en la cuarentena?? Apira tu casa y tu balcon!! Aspiradora de mano. Funciona sin bolsa. Sistema de filtrado incorporado. Se enciende manualmente. Su potencia es de 500W y puede ser regulada. Tus espacios siempre deslumbrantes.",
   category: "House Tools",
   status: true,
   price: Faker::Number.number(digits: 3),
@@ -234,8 +234,8 @@ end
 puts "Creating Tool 7"
 
 tool = Tool.new(
-  name: "Clavadora Engrampadora",
-  description: "Ideal para fabricación de muebles y fibrofácil. Funciona con compresor de 50 lts. Calibre: 18Ga. Incluye: Acople rápido, 1 un botella con lubricante, 2 llaves hexagonales. Capacidad de grampas: 16-40mm. Capacidad de clavos: 15-50mm. Cargador de 100 un",
+  name: "Clavadora Engrampadora - Aburrido en la Cuarentena ®",
+  description: "Aburrido en la cuarentena?? Armate tu propia mesa de fibrofácil!! Funciona con compresor de 50 lts. Calibre: 18Ga. Incluye: Acople rápido, 1 un botella con lubricante, 2 llaves hexagonales. Capacidad de grampas: 16-40mm. Capacidad de clavos: 15-50mm. Cargador de 100 un",
   category: "Industrial Tools",
   status: true,
   price: Faker::Number.number(digits: 3),
@@ -263,8 +263,8 @@ end
 puts "Creating Tool 8"
 
 tool = Tool.new(
-  name: "Aspiradora Industrial",
-  description: "Ideal para Lavaderos e Industrias!! Aspiradora Industrial de Polvo y Líquido. Marca: RC Distribuidora. Modelo: CB60-2. Posee 2 motores de 1000W c/u. Potencia total 2000W. Tanque inox de 60 lts con manguera para descarga de líquidos. 2 ruedas fijas y 2 ruedas giratorias. Manguera de desagote de líquido. Dimensiones: 63,5x56x108,5 cm. Peso 22 kg",
+  name: "Aspiradora Industrial - Aburrido en la Cuarentena ®",
+  description: "Aburrido en la cuarentena?? Ponete un lavaderao en la vereda!! Aspiradora Industrial de Polvo y Líquido. Marca: RC Distribuidora. Modelo: CB60-2. Posee 2 motores de 1000W c/u. Potencia total 2000W. Tanque inox de 60 lts con manguera para descarga de líquidos. 2 ruedas fijas y 2 ruedas giratorias. Manguera de desagote de líquido. Dimensiones: 63,5x56x108,5 cm. Peso 22 kg",
   category: "Industrial Tools",
   status: true,
   price: Faker::Number.number(digits: 3),
@@ -292,8 +292,8 @@ end
 puts "Creating Tool 9"
 
 tool = Tool.new(
-  name: "Kit Taladro Percutor",
-  description: "Selector para percutor o mecha, montado sobre block de aluminio inyectado, bobinado en cobre, empuñadora Soft Grip, totalmente montado en rulemanes, empuñadura con medidor de profundidad.",
+  name: "Kit Taladro Percutor - Aburrido en la Cuarentena ®",
+  description: "Aburrido en la cuarentena?? Colga todos los cuadros que no colgaste desde la mudanza!! Selector para percutor o mecha, montado sobre block de aluminio inyectado, bobinado en cobre, empuñadora Soft Grip, totalmente montado en rulemanes, empuñadura con medidor de profundidad.",
   category: "House Tools",
   status: true,
   price: Faker::Number.number(digits: 3),
@@ -321,8 +321,8 @@ end
 puts "Creating Tool 10"
 
 tool = Tool.new(
-  name: "Pistola De Encolar",
-  description: "Pega, sella y repara con exclusivo pico aislante y llave de encendido. Uso intensivo profesional, gran caudal de adhesivo 30 Grs/Min. Funde rápido, no pierde, no se obstruye ni se recalienta. Utiliza barras de pegamento 1,12Cm gruesa, incluye 2 de repuesto en su caja original.",
+  name: "Pistola De Encolar - Aburrido en la Cuarentena ®",
+  description: "Aburrido en la cuarentena?? Pega, sella y repara todo lo que guardaste en el cajon de las cosas rotas!!. Con exclusivo pico aislante y llave de encendido. Uso intensivo profesional, gran caudal de adhesivo 30 Grs/Min. Funde rápido, no pierde, no se obstruye ni se recalienta. Utiliza barras de pegamento 1,12Cm gruesa, incluye 2 de repuesto en su caja original.",
   category: "House Tools",
   status: true,
   price: Faker::Number.number(digits: 3),
@@ -350,8 +350,8 @@ end
 puts "Creating Tool 11"
 
 tool = Tool.new(
-  name: "Sierra Multicortadora",
-  description: "Velocidad variable. Trabaja por vibración, segura para el operario. Empuñadura con sistema Soft-Grip, mejor agarre y confortable a la mano. Diseño compacto y ergonómico",
+  name: "Sierra Multicortadora - Aburrido en la Cuarentena ®",
+  description: "Aburrido en la cuarentena?? Corta con tanto Netflix!! Velocidad variable. Trabaja por vibración, segura para el operario. Empuñadura con sistema Soft-Grip, mejor agarre y confortable a la mano. Diseño compacto y ergonómico",
   category: "House Tools",
   status: true,
   price: Faker::Number.number(digits: 3),
@@ -379,8 +379,8 @@ end
 puts "Creating Tool 12"
 
 tool = Tool.new(
-  name: "Amoladora Angular",
-  description: "El disco tiene un diámetro de 115mm. Tiene interruptor de tecla. Su potencia es de 830W. Velocidad máxima de rotación de 11000rpm. Es antipolvo y protege al motor de la suciedad entrante. Pesa 2.4kg. Herramienta versátil para lijar, pulir y cortar.",
+  name: "Amoladora Angular - Aburrido en la Cuarentena ®",
+  description: "Aburrido en la cuarentena?? Esto para que se usa? El disco tiene un diámetro de 115mm. Tiene interruptor de tecla. Su potencia es de 830W. Velocidad máxima de rotación de 11000rpm. Es antipolvo y protege al motor de la suciedad entrante. Pesa 2.4kg. Herramienta versátil para lijar, pulir y cortar.",
   category: "House Tools",
   status: true,
   price: Faker::Number.number(digits: 3),
